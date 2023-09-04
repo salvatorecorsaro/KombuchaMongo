@@ -7,3 +7,5 @@ Content-Type: application/json
   "flavor": "Ginger"
 }
 
+### find all
+GET localhost:8080/api/kombuchas
