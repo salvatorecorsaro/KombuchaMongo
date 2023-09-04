@@ -7,3 +7,9 @@ Content-Type: application/json
   "flavor": "Ginger"
 }
 
+### find all
+GET localhost:8080/api/kombuchas
+
+
+### delete by id
+DELETE localhost:8080/api/kombuchas/64f7011c550096149110838e
