@@ -1,0 +1,9 @@
+### create
+POST localhost:8080/api/kombuchas
+Content-Type: application/json
+
+{
+  "name": "Kombucha 1",
+  "flavor": "Ginger"
+}
+
