@@ -9,8 +9,6 @@ Hey there! Welcome to the coolest Kombucha project ever! 🎉 This is a Spring B
 - [Getting Started](#getting-started) 🚀
     - [What You'll Need](#what-youll-need) 🛠
     - [How to Get It Running](#how-to-get-it-running) 🏃‍♀️
-- [How to Use](#how-to-use) 🎮
-- [API Endpoints](#api-endpoints) 🌐
 - [Testing](#testing) 🧪
 - [Wanna Contribute?](#wanna-contribute) 👾
 - [License](#license) 📄
