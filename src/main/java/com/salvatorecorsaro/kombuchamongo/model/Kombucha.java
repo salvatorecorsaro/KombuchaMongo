@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Document(collection = "kombuchas")
@@ -16,12 +18,15 @@ public class Kombucha {
 
     @Id
     private String id;
+    @TextIndexed
     private String name;
+    @TextIndexed
     private String flavor;
-    private String brand;
-    private List<Review> reviews; // Embedding reviews inside the Kombucha document
-    private double rating; // Calculated from reviews
-    private int stock; // Number of Kombucha bottles in stock
+    @TextIndexed
+    private String description;
+    private List<Review> reviews = new ArrayList<>();
+    private double rating;
+    private int stock;
 
     public void addReview(Review review) {
         this.reviews.add(review);

@@ -3,8 +3,9 @@ POST localhost:8080/api/kombuchas
 Content-Type: application/json
 
 {
-  "name": "Kombucha 1",
-  "flavor": "Ginger"
+  "name": "Kombucha 3",
+  "flavor": "Ginger",
+  "description": "This is a super kombucha!"
 }
 
 ### find all
@@ -12,4 +13,40 @@ GET localhost:8080/api/kombuchas
 
 
 ### delete by id
-DELETE localhost:8080/api/kombuchas/64f7011c550096149110838e
+DELETE localhost:8080/api/kombuchas/64f71338d2b18b76376bd4ff
+
+
+### add review
+POST localhost:8080/api/kombuchas/64f717119870775c1cea61c9/reviews
+Content-Type: application/json
+
+{
+  "author": "John Doe",
+  "rating": 5,
+  "comment": "This is a great kombucha!"
+}
+
+### add review 2
+POST localhost:8080/api/kombuchas/64f717119870775c1cea61c9/reviews
+Content-Type: application/json
+
+{
+  "author": "Luis",
+  "rating": 3,
+  "comment": "Love the flavor"
+}
+
+
+### add review 3
+POST localhost:8080/api/kombuchas/64f71338d2b18b76376bd4ff/reviews
+Content-Type: application/json
+
+{
+  "author": "Jim",
+  "rating": 5,
+  "comment": "Loving it"
+}
+
+### search everywhere
+GET localhost:8080/api/kombuchas/search?query=Kombucha
+

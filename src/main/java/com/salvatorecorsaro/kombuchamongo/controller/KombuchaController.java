@@ -62,5 +62,11 @@ public class KombuchaController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Kombucha>> search(@RequestParam String query) {
+        List<Kombucha> kombuchas = kombuchaService.search(query);
+        return new ResponseEntity<>(kombuchas, HttpStatus.OK);
+    }
 }
 

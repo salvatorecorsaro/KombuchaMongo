@@ -6,6 +6,8 @@ import com.salvatorecorsaro.kombuchamongo.repository.KombuchaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,6 +37,10 @@ public class KombuchaService {
         Optional<Kombucha> kombuchaOptional = kombuchaRepository.findById(kombuchaId);
         if (kombuchaOptional.isPresent()) {
             Kombucha kombucha = kombuchaOptional.get();
+            String currentTime = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
+            String uniqueId = review.getAuthor() + "-" + currentTime;
+            uniqueId = uniqueId.replace(" ", "-").toLowerCase();
+            review.setId(uniqueId);
             kombucha.addReview(review);
             return kombuchaRepository.save(kombucha);
         } else {
@@ -51,6 +57,10 @@ public class KombuchaService {
         } else {
             throw new IllegalArgumentException("Kombucha with id " + kombuchaId + " not found");
         }
+    }
+
+    public List<Kombucha> search(String text) {
+        return kombuchaRepository.search(text);
     }
 }
 
