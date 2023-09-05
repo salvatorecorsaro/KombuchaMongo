@@ -49,4 +49,3 @@ Content-Type: application/json
 
 ### search everywhere
 GET localhost:8080/api/kombuchas/search?query=Kombucha
-
