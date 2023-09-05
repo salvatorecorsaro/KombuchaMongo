@@ -11,7 +11,6 @@ Hey there! Welcome to the coolest Kombucha project ever! 🎉 This is a Spring B
     - [How to Get It Running](#how-to-get-it-running) 🏃‍♀️
 - [Testing](#testing) 🧪
 - [Wanna Contribute?](#wanna-contribute) 👾
-- [License](#license) 📄
 - [Shoutouts](#shoutouts) 🙌
 
 ## Getting Started 🚀
@@ -52,10 +51,6 @@ mvn test
 ## Wanna Contribute? 👾
 
 Feel free to fork, create a feature branch, and send us a PR! 🎉
-
-## License 📄
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Shoutouts 🙌
 
