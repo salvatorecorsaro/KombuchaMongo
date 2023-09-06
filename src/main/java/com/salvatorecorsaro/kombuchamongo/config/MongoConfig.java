@@ -1,13 +1,13 @@
 package com.salvatorecorsaro.kombuchamongo.config;
 
 import com.salvatorecorsaro.kombuchamongo.model.Kombucha;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.index.TextIndexDefinition;
 import org.springframework.data.mongodb.core.index.TextIndexDefinition.TextIndexDefinitionBuilder;
 import org.springframework.stereotype.Component;
 
-import jakarta.annotation.PostConstruct;
 
 @Component
 @RequiredArgsConstructor

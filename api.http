@@ -3,7 +3,7 @@ POST localhost:8080/api/kombuchas
 Content-Type: application/json
 
 {
-  "name": "Kombucha 3",
+  "name": "Kombucha 0",
   "flavor": "Ginger",
   "description": "This is a super kombucha!"
 }
@@ -12,6 +12,8 @@ Content-Type: application/json
 GET localhost:8080/api/kombuchas
 
 
+### filter by date
+GET localhost:8080/api/kombuchas/between?start=2023-09-01T12:00:00Z&end=2023-09-08T14:00:00Z
 ### delete by id
 DELETE localhost:8080/api/kombuchas/64f71338d2b18b76376bd4ff
 
@@ -21,7 +23,7 @@ POST localhost:8080/api/kombuchas/64f717119870775c1cea61c9/reviews
 Content-Type: application/json
 
 {
-  "author": "John Doe",
+  "author": "Ruud",
   "rating": 5,
   "comment": "This is a great kombucha!"
 }

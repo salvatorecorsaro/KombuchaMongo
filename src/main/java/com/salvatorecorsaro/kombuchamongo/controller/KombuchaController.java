@@ -6,8 +6,17 @@ import com.salvatorecorsaro.kombuchamongo.service.KombuchaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +38,11 @@ public class KombuchaController {
         Optional<Kombucha> kombucha = kombuchaService.getKombuchaById(id);
         return kombucha.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    @GetMapping("between")
+    public List<Kombucha> getKombuchasByCreationTime(@RequestParam(value = "start") Instant start, @RequestParam(value = "end") Instant end) {
+        return kombuchaService.getKombuchasByCreationTime(start, end);
     }
 
     @PostMapping

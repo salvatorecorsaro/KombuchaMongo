@@ -3,10 +3,12 @@ package com.salvatorecorsaro.kombuchamongo.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +29,10 @@ public class Kombucha {
     private List<Review> reviews = new ArrayList<>();
     private double rating;
     private int stock;
+
+    @CreatedDate
+    private Instant creationTime;
+
 
     public void addReview(Review review) {
         this.reviews.add(review);

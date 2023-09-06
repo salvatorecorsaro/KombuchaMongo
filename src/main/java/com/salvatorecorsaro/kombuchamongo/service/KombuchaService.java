@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -23,6 +24,10 @@ public class KombuchaService {
 
     public Optional<Kombucha> getKombuchaById(String id) {
         return kombuchaRepository.findById(id);
+    }
+
+    public List<Kombucha> getKombuchasByCreationTime(Instant start, Instant end) {
+        return kombuchaRepository.findByCreationTimeBetween(start, end);
     }
 
     public Kombucha saveKombucha(Kombucha kombucha) {
