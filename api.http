@@ -12,6 +12,10 @@ Content-Type: application/json
 GET localhost:8080/api/kombuchas
 
 
+### find by id
+GET localhost:8080/api/kombuchas/64f875529762e7403d9ee2aa
+
+
 ### filter by date
 GET localhost:8080/api/kombuchas/between?start=2023-09-01T12:00:00Z&end=2023-09-08T14:00:00Z
 ### delete by id
@@ -29,7 +33,7 @@ Content-Type: application/json
 }
 
 ### add review 2
-POST localhost:8080/api/kombuchas/64f717119870775c1cea61c9/reviews
+POST localhost:8080/api/kombuchas/64f875529762e7403d9ee2aa/reviews
 Content-Type: application/json
 
 {
@@ -49,5 +53,8 @@ Content-Type: application/json
   "comment": "Loving it"
 }
 
+
+### delete by id
+DELETE localhost:8080/api/kombuchas/64f875529762e7403d9ee2aa/reviews/luis-20230906144936122
 ### search everywhere
 GET localhost:8080/api/kombuchas/search?query=Kombucha

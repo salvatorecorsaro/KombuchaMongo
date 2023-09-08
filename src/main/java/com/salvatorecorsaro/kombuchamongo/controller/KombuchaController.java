@@ -66,6 +66,16 @@ public class KombuchaController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @DeleteMapping("/{kombuchaId}/reviews/{reviewId}")
+    public ResponseEntity<Void> deleteReview(@PathVariable String kombuchaId, @PathVariable String reviewId) {
+        try {
+            kombuchaService.removeReview(kombuchaId, reviewId);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 
     @PatchMapping("/{id}/stock")
     public ResponseEntity<Kombucha> updateStock(@PathVariable String id, @RequestParam int quantity) {
