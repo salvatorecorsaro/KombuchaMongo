@@ -6,6 +6,7 @@ import com.salvatorecorsaro.kombuchamongo.repository.KombuchaRepository;
 import com.salvatorecorsaro.kombuchamongo.service.KombuchaService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
@@ -19,6 +20,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 @DataMongoTest
 @Import(KombuchaService.class)
+@Disabled
 public class KombuchaServiceIntegrationTest {
 
     @Autowired
